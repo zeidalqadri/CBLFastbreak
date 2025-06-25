@@ -11,25 +11,26 @@
       font-family: "Segoe UI", sans-serif;
       background-color: #f5f7fa;
       color: #222;
+      height: 100%;
     }
 
     .wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
+      padding: 1.5rem;
       max-width: 1000px;
       margin: auto;
     }
 
     h1 {
       font-size: 1.75rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       text-align: center;
     }
 
     .toggle {
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       text-align: center;
     }
 
@@ -45,13 +46,15 @@
 
     .form-container {
       width: 100%;
-      height: 90vh;
+      height: 85vh;
     }
 
     iframe {
       width: 100%;
       height: 100%;
       border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
   </style>
 </head>
@@ -60,11 +63,11 @@
     <h1 id="form-title">CBL Fastbreak Melaka – Program Latihan Jurulatih</h1>
 
     <div class="toggle">
-      <button onclick="toggleLang()">Tukar ke English 🇬🇧</button>
+      <button onclick="toggleLang()">Tukar ke Bahasa Inggeris 🇬🇧</button>
     </div>
 
     <div class="form-container">
-      <iframe id="form-frame" src="https://form.typeform.com/to/01JYJEHXZBT3BXV2P9GD902H6V" allow="camera; microphone; autoplay; encrypted-media;" loading="lazy"></iframe>
+      <iframe id="form-frame" src="https://form.typeform.com/to/01JYJEHXZBT3BXV2P9GD902H6V?typeform-embed=embed-widget" allow="camera; microphone; autoplay; encrypted-media;" loading="lazy"></iframe>
     </div>
   </div>
 
@@ -75,8 +78,8 @@
     };
 
     const forms = {
-      en: "https://form.typeform.com/to/01JYJDD5TTDDQPDTY7RSJCWTNT",
-      bm: "https://form.typeform.com/to/01JYJEHXZBT3BXV2P9GD902H6V"
+      en: "https://form.typeform.com/to/01JYJDD5TTDDQPDTY7RSJCWTNT?typeform-embed=embed-widget",
+      bm: "https://form.typeform.com/to/01JYJEHXZBT3BXV2P9GD902H6V?typeform-embed=embed-widget"
     };
 
     let currentLang = "bm";
