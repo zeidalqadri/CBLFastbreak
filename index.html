@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,745 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basketball Coaching Program - Pre-Program Survey</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: #ffffff;
-            font-size: 16px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .header h1 {
-            font-size: 28px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .header p {
-            color: #7f8c8d;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 2px;
-            background: #ecf0f1;
-            border-radius: 1px;
-            margin: 30px 0;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: #3498db;
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .section {
-            margin-bottom: 50px;
-        }
-
-        .section-header {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-subtitle {
-            font-size: 14px;
-            color: #7f8c8d;
-            font-style: italic;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group.inline {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .form-group.triple {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            font-size: 15px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea {
-            width: 100%;
-            padding: 12px 0;
-            border: none;
-            border-bottom: 1px solid #bdc3c7;
-            background: transparent;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="tel"]:focus,
-        textarea:focus {
-            outline: none;
-            border-bottom-color: #3498db;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-            border: 1px solid #bdc3c7;
-            border-radius: 4px;
-            padding: 12px;
-        }
-
-        .checkbox-group,
-        .radio-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .checkbox-group.horizontal,
-        .radio-group.horizontal {
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .checkbox-item,
-        .radio-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            padding: 8px 0;
-        }
-
-        input[type="checkbox"],
-        input[type="radio"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        .checkbox-item label,
-        .radio-item label {
-            margin: 0;
-            cursor: pointer;
-            font-weight: 400;
-        }
-
-        .required {
-            color: #e74c3c;
-        }
-
-        .submit-section {
-            margin-top: 60px;
-            text-align: center;
-        }
-
-        .submit-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #2980b9;
-        }
-
-        .submit-btn:disabled {
-            background: #bdc3c7;
-            cursor: not-allowed;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
-            }
-            
-            .form-group.inline,
-            .form-group.triple {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .checkbox-group.horizontal,
-            .radio-group.horizontal {
-                flex-direction: column;
-                gap: 12px;
-            }
-        }
+        /* Paste your original CSS here */
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>CBL Fastbreak Melaka</h1>
-            <p>Pre-Program Survey</p>
-            <p><em>Takes about 6-8 minutes • Your progress is saved automatically</em></p>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-        </div>
-
-        <form id="basketballSurvey" action="#" method="POST">
-            <!-- Section 1: Your Details -->
-            <div class="section" data-section="1">
-                <div class="section-header">
-                    <div class="section-title">📋 Your Details</div>
-                    <div class="section-subtitle">Just the basics to get started</div>
-                </div>
-                
-                <div class="form-group inline">
-                    <div>
-                        <label for="fullName">Full Name <span class="required">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required>
-                    </div>
-                    <div>
-                        <label for="school">School <span class="required">*</span></label>
-                        <input type="text" id="school" name="school" required>
-                    </div>
-                </div>
-
-                <div class="form-group inline">
-                    <div>
-                        <label for="email">Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="phone">Phone/WhatsApp <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Years teaching <span class="required">*</span></label>
-                    <div class="radio-group horizontal">
-                        <div class="radio-item">
-                            <input type="radio" id="years0-2" name="yearsTeaching" value="0-2" required>
-                            <label for="years0-2">0-2</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="years3-7" name="yearsTeaching" value="3-7">
-                            <label for="years3-7">3-7</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="years8-15" name="yearsTeaching" value="8-15">
-                            <label for="years8-15">8-15</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="years15plus" name="yearsTeaching" value="15+">
-                            <label for="years15plus">15+</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Primary role <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="roleClassroom" name="primaryRole" value="classroom" required>
-                            <label for="roleClassroom">Classroom teacher</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="rolePE" name="primaryRole" value="pe">
-                            <label for="rolePE">PE/Sports</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="roleAdmin" name="primaryRole" value="admin">
-                            <label for="roleAdmin">Admin</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="roleOther" name="primaryRole" value="other">
-                            <label for="roleOther">Other</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Student ages you work with</label>
-                    <div class="checkbox-group horizontal">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="age7-9" name="studentAges" value="7-9">
-                            <label for="age7-9">7-9</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="age10-12" name="studentAges" value="10-12">
-                            <label for="age10-12">10-12</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="age13-15" name="studentAges" value="13-15">
-                            <label for="age13-15">13-15</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="age16-17" name="studentAges" value="16-17">
-                            <label for="age16-17">16-17</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="age18plus" name="studentAges" value="18+">
-                            <label for="age18plus">18+</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 2: Basketball Experience -->
-            <div class="section" data-section="2">
-                <div class="section-header">
-                    <div class="section-title">🏀 Basketball Experience Check</div>
-                    <div class="section-subtitle">Quick assessment of where you're starting from</div>
-                </div>
-
-                <div class="form-group">
-                    <label>Your basketball background <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="bbBeginner" name="basketballBackground" value="beginner" required>
-                            <label for="bbBeginner">Never played - complete beginner</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="bbCasual" name="basketballBackground" value="casual">
-                            <label for="bbCasual">Casual/recreational playing experience</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="bbCompetitive" name="basketballBackground" value="competitive">
-                            <label for="bbCompetitive">Played competitively (school/club level)</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="bbCoached" name="basketballBackground" value="coached">
-                            <label for="bbCoached">Have coached/taught basketball before</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>If you had to teach basic basketball skills tomorrow, how confident would you feel? <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="confVery" name="teachingConfidence" value="very" required>
-                            <label for="confVery">Very confident - I could handle it</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="confSomewhat" name="teachingConfidence" value="somewhat">
-                            <label for="confSomewhat">Somewhat confident - with some preparation</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="confNot" name="teachingConfidence" value="not">
-                            <label for="confNot">Not very confident - would need significant help</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="confNotAtAll" name="teachingConfidence" value="notAtAll">
-                            <label for="confNotAtAll">Not confident at all - would struggle</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 3: School Context -->
-            <div class="section" data-section="3">
-                <div class="section-header">
-                    <div class="section-title">🏫 Your School Context</div>
-                    <div class="section-subtitle">Understanding your environment and opportunities</div>
-                </div>
-
-                <div class="form-group">
-                    <label>Current basketball at your school <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="bbActive" name="currentBasketball" value="active" required>
-                            <label for="bbActive">Active basketball program (teams/training)</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="bbSome" name="currentBasketball" value="some">
-                            <label for="bbSome">Some basketball activity (PE/casual)</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="bbInterested" name="currentBasketball" value="interested">
-                            <label for="bbInterested">No basketball currently, but students interested</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="bbNone" name="currentBasketball" value="none">
-                            <label for="bbNone">No basketball activity or interest</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Available facilities</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="facilityFull" name="facilities" value="full">
-                            <label for="facilityFull">Full basketball court</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="facilityHalf" name="facilities" value="half">
-                            <label for="facilityHalf">Half court</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="facilityMulti" name="facilities" value="multi">
-                            <label for="facilityMulti">Multi-purpose court</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="facilityHall" name="facilities" value="hall">
-                            <label for="facilityHall">Large hall/gym</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="facilityOutdoor" name="facilities" value="outdoor">
-                            <label for="facilityOutdoor">Outdoor paved area</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="facilityLimited" name="facilities" value="limited">
-                            <label for="facilityLimited">Limited space only</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Biggest challenge if you wanted to start basketball activities (Select top 2)</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="challengeEquipment" name="challenges" value="equipment">
-                            <label for="challengeEquipment">Lack of equipment/space</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="challengeApproval" name="challenges" value="approval">
-                            <label for="challengeApproval">Administrative approval</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="challengeTime" name="challenges" value="time">
-                            <label for="challengeTime">Time/scheduling constraints</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="challengeKnowledge" name="challenges" value="knowledge">
-                            <label for="challengeKnowledge">Lack of coaching knowledge</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="challengeSafety" name="challenges" value="safety">
-                            <label for="challengeSafety">Student safety concerns</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="challengeBudget" name="challenges" value="budget">
-                            <label for="challengeBudget">Limited budget</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 4: Goals & Motivation -->
-            <div class="section" data-section="4">
-                <div class="section-header">
-                    <div class="section-title">🎯 Your Goals & Motivation</div>
-                    <div class="section-subtitle">What you hope to achieve</div>
-                </div>
-
-                <div class="form-group">
-                    <label>Primary reason for joining this program <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="reasonStudents" name="primaryReason" value="students" required>
-                            <label for="reasonStudents">Students have requested basketball activities</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="reasonSkills" name="primaryReason" value="skills">
-                            <label for="reasonSkills">Want to expand my skills and teaching toolkit</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="reasonSchool" name="primaryReason" value="school">
-                            <label for="reasonSchool">School priority/administration request</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="reasonPersonal" name="primaryReason" value="personal">
-                            <label for="reasonPersonal">Personal interest in basketball/coaching</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="reasonEngage" name="primaryReason" value="engage">
-                            <label for="reasonEngage">Looking for new ways to engage students</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>How you'd likely use these skills</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useTeam" name="skillUse" value="team">
-                            <label for="useTeam">Start/coach official school team</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="usePE" name="skillUse" value="pe">
-                            <label for="usePE">Add to PE lessons</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useActivities" name="skillUse" value="activities">
-                            <label for="useActivities">Run lunch/after-school activities</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useCompetitions" name="skillUse" value="competitions">
-                            <label for="useCompetitions">Organize school competitions</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useSupport" name="skillUse" value="support">
-                            <label for="useSupport">Support existing sports programs</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>What student outcomes matter most to you (Select top 3)</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeConfidence" name="outcomes" value="confidence">
-                            <label for="outcomeConfidence">Building confidence & self-esteem</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeTeamwork" name="outcomes" value="teamwork">
-                            <label for="outcomeTeamwork">Teamwork & collaboration</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeFitness" name="outcomes" value="fitness">
-                            <label for="outcomeFitness">Physical fitness & health</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeEngaging" name="outcomes" value="engaging">
-                            <label for="outcomeEngaging">Engaging reluctant students</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeLeadership" name="outcomes" value="leadership">
-                            <label for="outcomeLeadership">Leadership development</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeSpirit" name="outcomes" value="spirit">
-                            <label for="outcomeSpirit">School spirit & community</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeSocial" name="outcomes" value="social">
-                            <label for="outcomeSocial">Social skills development</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 5: Practical Considerations -->
-            <div class="section" data-section="5">
-                <div class="section-header">
-                    <div class="section-title">⚙️ Practical Considerations</div>
-                    <div class="section-subtitle">Making sure the program works for you</div>
-                </div>
-
-                <div class="form-group">
-                    <label>Can you commit to all training sessions? <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="commitYes" name="commitment" value="yes" required>
-                            <label for="commitYes">Yes, definitely</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="commitMaybe" name="commitment" value="maybe">
-                            <label for="commitMaybe">Yes, but might miss one session</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="commitProbably" name="commitment" value="probably">
-                            <label for="commitProbably">Probably, but school schedule could conflict</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="commitUncertain" name="commitment" value="uncertain">
-                            <label for="commitUncertain">Uncertain due to commitments</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Realistic timeline for implementing basketball activities <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="timelineImmediate" name="timeline" value="immediate" required>
-                            <label for="timelineImmediate">Immediately after training</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timelineNextTerm" name="timeline" value="nextTerm">
-                            <label for="timelineNextTerm">Next school term</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timelineNextYear" name="timeline" value="nextYear">
-                            <label for="timelineNextYear">Next academic year</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timelineOpportunity" name="timeline" value="opportunity">
-                            <label for="timelineOpportunity">When opportunity arises</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timelineDepends" name="timeline" value="depends">
-                            <label for="timelineDepends">Depends on school approval/resources</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Any physical limitations or accessibility needs we should know about?</label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="limitationsNone" name="limitations" value="none">
-                            <label for="limitationsNone">None</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="limitationsMinor" name="limitations" value="minor">
-                            <label for="limitationsMinor">Minor limitations</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="limitationsSignificant" name="limitations" value="significant">
-                            <label for="limitationsSignificant">Significant limitations</label>
-                        </div>
-                    </div>
-                    <input type="text" name="limitationsDetails" placeholder="Please specify if applicable" style="margin-top: 10px;">
-                </div>
-
-                <div class="form-group">
-                    <label>Preferred learning style (Select top 2)</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnHands" name="learningStyle" value="hands">
-                            <label for="learnHands">Hands-on practice</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnGuides" name="learningStyle" value="guides">
-                            <label for="learnGuides">Step-by-step guides/templates</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnVideo" name="learningStyle" value="video">
-                            <label for="learnVideo">Video demonstrations</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnDiscussion" name="learningStyle" value="discussion">
-                            <label for="learnDiscussion">Group discussion</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnMaterials" name="learningStyle" value="materials">
-                            <label for="learnMaterials">Resource materials</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 6: Final Thoughts -->
-            <div class="section" data-section="6">
-                <div class="section-header">
-                    <div class="section-title">💭 Final Thoughts</div>
-                    <div class="section-subtitle">Optional but helpful</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="challenge">Specific coaching challenge you hope we'll address</label>
-                    <textarea id="challenge" name="challenge" placeholder="e.g., 'Managing large groups with limited equipment'"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="success">What would success look like for you after this program</label>
-                    <textarea id="success" name="success" placeholder="Describe your ideal outcome..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>How did you hear about this program <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="hearAdmin" name="hearAbout" value="admin" required>
-                            <label for="hearAdmin">School admin</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="hearColleague" name="hearAbout" value="colleague">
-                            <label for="hearColleague">Colleague</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="hearDept" name="hearAbout" value="dept">
-                            <label for="hearDept">Education dept</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="hearSocial" name="hearAbout" value="social">
-                            <label for="hearSocial">Social media</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="hearOther" name="hearAbout" value="other">
-                            <label for="hearOther">Other</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group triple">
-                    <div>
-                        <label for="emergencyName">Emergency contact name <span class="required">*</span></label>
-                        <input type="text" id="emergencyName" name="emergencyName" required>
-                    </div>
-                    <div>
-                        <label for="emergencyRelation">Relationship <span class="required">*</span></label>
-                        <input type="text" id="emergencyRelation" name="emergencyRelation" required>
-                    </div>
-                    <div>
-                        <label for="emergencyPhone">Phone <span class="required">*</span></label>
-                        <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="additional">Anything else that would help us support your learning</label>
-                    <textarea id="additional" name="additional" placeholder="Any additional information you'd like to share..."></textarea>
-                </div>
-            </div>
-
-            <div class="submit-section">
-                <button type="submit" class="submit-btn" id="submitBtn">Submit Survey</button>
-                <p style="margin-top: 20px; color: #7f8c8d; font-size: 14px;">
-                    We'll review your responses and contact you within one week with program details.
-                </p>
-            </div>
-        </form>
+        <!-- Paste your original HTML form here -->
     </div>
-
     <script>
-        // Progress tracking
+        // --- Google Sheets Integration ---
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxXHr46BCZ0SyxDlVco2B-wIstQvK_p56EF9LZUolPYHp10u0-eIN4y_ZKSPrNQnk8/exec'; // e.g. https://script.google.com/macros/s/...
+
+        // Progress tracking (unchanged)
         const sections = document.querySelectorAll('.section');
         const progressFill = document.getElementById('progressFill');
         const form = document.getElementById('basketballSurvey');
@@ -774,39 +48,86 @@
         form.addEventListener('input', updateProgress);
         form.addEventListener('change', updateProgress);
 
-        // Form submission
+        // --- Serialize form data robustly ---
+        function getFormData(form) {
+            const data = {};
+            const formData = new FormData(form);
+
+            // For checkboxes with same name, collect all checked values as array
+            form.querySelectorAll('input[type="checkbox"]').forEach(input => {
+                if (!data[input.name]) data[input.name] = [];
+            });
+
+            for (const [key, value] of formData.entries()) {
+                const input = form.querySelector(`[name="${key}"]`);
+                if (input && input.type === 'checkbox') {
+                    if (!data[key]) data[key] = [];
+                    data[key].push(value);
+                } else if (input && input.type === 'radio') {
+                    data[key] = value;
+                } else {
+                    data[key] = value;
+                }
+            }
+
+            // Remove empty arrays (unchecked checkboxes)
+            Object.keys(data).forEach(key => {
+                if (Array.isArray(data[key]) && data[key].length === 0) {
+                    delete data[key];
+                }
+            });
+
+            return data;
+        }
+
+        // --- Form submission with Google Sheets integration ---
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Disable submit button
+
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Submitting...';
-            
-            // Collect form data
-            const formData = new FormData(form);
-            
-            // Here you would typically send the data to your server
-            // For now, we'll just simulate a successful submission
-            setTimeout(() => {
-                alert('Thank you! Your survey has been submitted successfully. We\'ll contact you within one week.');
-                submitBtn.textContent = 'Submitted ✓';
-            }, 1000);
+
+            const data = getFormData(form);
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.result === 'success') {
+                    alert('Thank you! Your survey has been submitted successfully. We\'ll contact you within one week.');
+                    submitBtn.textContent = 'Submitted ✓';
+                    localStorage.removeItem('basketballSurveyData');
+                    form.reset();
+                    updateProgress();
+                } else {
+                    throw new Error(result.error || 'Unknown error');
+                }
+            })
+            .catch(err => {
+                alert('Sorry, there was a problem submitting your survey. Please try again.\n\n' + err.message);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Survey';
+            });
         });
 
-        // Auto-save functionality (optional)
+        // --- Auto-save functionality (unchanged) ---
         let autoSaveTimeout;
         form.addEventListener('input', function() {
             clearTimeout(autoSaveTimeout);
             autoSaveTimeout = setTimeout(() => {
-                // Save to localStorage as backup
-                const formData = new FormData(form);
-                const data = Object.fromEntries(formData.entries());
+                const data = getFormData(form);
                 localStorage.setItem('basketballSurveyData', JSON.stringify(data));
             }, 2000);
         });
 
-        // Load saved data on page load
+        // --- Load saved data on page load (unchanged) ---
         window.addEventListener('load', function() {
             const savedData = localStorage.getItem('basketballSurveyData');
             if (savedData) {
@@ -816,8 +137,15 @@
                         const input = form.querySelector(`[name="${key}"]`);
                         if (input) {
                             if (input.type === 'radio' || input.type === 'checkbox') {
-                                const specificInput = form.querySelector(`[name="${key}"][value="${data[key]}"]`);
-                                if (specificInput) specificInput.checked = true;
+                                if (Array.isArray(data[key])) {
+                                    data[key].forEach(val => {
+                                        const specificInput = form.querySelector(`[name="${key}"][value="${val}"]`);
+                                        if (specificInput) specificInput.checked = true;
+                                    });
+                                } else {
+                                    const specificInput = form.querySelector(`[name="${key}"][value="${data[key]}"]`);
+                                    if (specificInput) specificInput.checked = true;
+                                }
                             } else {
                                 input.value = data[key];
                             }
@@ -828,11 +156,6 @@
                     console.log('Error loading saved data');
                 }
             }
-        });
-
-        // Clear saved data on successful submission
-        form.addEventListener('submit', function() {
-            localStorage.removeItem('basketballSurveyData');
         });
     </script>
 </body>
