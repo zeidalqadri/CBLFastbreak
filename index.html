@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CBL Fastbreak Melaka – Coach the Coach</title>
+  <title>CBL Fastbreak Melaka – Program Latihan Jurulatih</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: "Segoe UI", sans-serif;
       background-color: #f5f7fa;
       color: #222;
@@ -19,34 +18,76 @@
       flex-direction: column;
       align-items: center;
       padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
     }
 
     h1 {
       font-size: 1.75rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
       text-align: center;
+    }
+
+    .toggle {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .toggle button {
+      background-color: #008080;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
     }
 
     .form-container {
       width: 100%;
-      max-width: 800px;
       height: 90vh;
     }
 
-    [data-tf-live] {
+    iframe {
       width: 100%;
       height: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <h1>CBL Fastbreak Melaka – Coach the Coach Registration</h1>
+    <h1 id="form-title">CBL Fastbreak Melaka – Program Latihan Jurulatih</h1>
+
+    <div class="toggle">
+      <button onclick="toggleLang()">Tukar ke English 🇬🇧</button>
+    </div>
+
     <div class="form-container">
-      <div data-tf-live="01JYJDD5TTDDQPDTY7RSJCWTNT"></div>
+      <iframe id="form-frame" src="https://form.typeform.com/to/01JYJEHXZBT3BXV2P9GD902H6V" allow="camera; microphone; autoplay; encrypted-media;" loading="lazy"></iframe>
     </div>
   </div>
-  <script src="//embed.typeform.com/next/embed.js"></script>
+
+  <script>
+    const titles = {
+      en: "CBL Fastbreak Melaka – Coach the Coach Program",
+      bm: "CBL Fastbreak Melaka – Program Latihan Jurulatih"
+    };
+
+    const forms = {
+      en: "https://form.typeform.com/to/01JYJDD5TTDDQPDTY7RSJCWTNT",
+      bm: "https://form.typeform.com/to/01JYJEHXZBT3BXV2P9GD902H6V"
+    };
+
+    let currentLang = "bm";
+
+    function toggleLang() {
+      currentLang = currentLang === "en" ? "bm" : "en";
+      document.getElementById("form-title").textContent = titles[currentLang];
+      document.getElementById("form-frame").src = forms[currentLang];
+      document.querySelector(".toggle button").textContent =
+        currentLang === "en" ? "Tukar ke Bahasa Melayu 🇲🇾" : "Switch to English 🇬🇧";
+    }
+  </script>
 </body>
 </html>
-
