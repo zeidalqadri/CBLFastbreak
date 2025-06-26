@@ -89,7 +89,7 @@
 
         .form-group.inline {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 15px;
         }
 
@@ -222,16 +222,16 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" aria-label="CBL Fastbreak Melaka Pre-Program Survey">
         <div class="header">
             <h1>CBL Fastbreak Melaka</h1>
             <p>Pre-Program Survey</p>
-            <p><em>Takes about 6-8 minutes • Your progress is saved automatically</em></p>
-            <div class="progress-bar">
+            <p><em>Takes about 3 minutes • Your progress is saved automatically</em></p>
+            <div class="progress-bar" aria-label="Progress">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
         </div>
-        <form id="basketballSurvey" action="#" method="POST">
+        <form id="basketballSurvey" action="#" method="POST" autocomplete="on" novalidate>
             <!-- Section 1: Your Details -->
             <div class="section" data-section="1">
                 <div class="section-header">
@@ -242,22 +242,37 @@
                 <div class="form-group inline">
                     <div>
                         <label for="fullName">Full Name <span class="required">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required>
+                        <input type="text" id="fullName" name="fullName" required autocomplete="name" aria-required="true">
+                    </div>
+                    <div>
+                        <label>Gender <span class="required">*</span></label>
+                        <div class="radio-item">
+                            <input type="radio" id="male" name="gender" value="M" required aria-required="true">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="female" name="gender" value="F">
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="otherGender" name="gender" value="Other">
+                            <label for="otherGender">Other</label>
+                        </div>
                     </div>
                     <div>
                         <label for="school">School <span class="required">*</span></label>
-                        <input type="text" id="school" name="school" required>
+                        <input type="text" id="school" name="school" required autocomplete="organization" aria-required="true">
                     </div>
                 </div>
 
                 <div class="form-group inline">
                     <div>
                         <label for="email">Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required autocomplete="email" aria-required="true">
                     </div>
                     <div>
                         <label for="phone">Phone/WhatsApp <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel" pattern="^[0-9+\s()-]{7,}$" aria-required="true" placeholder="e.g. 012-3456789">
                     </div>
                 </div>
 
@@ -265,7 +280,7 @@
                     <label>Years teaching <span class="required">*</span></label>
                     <div class="radio-group horizontal">
                         <div class="radio-item">
-                            <input type="radio" id="years0-2" name="yearsTeaching" value="0-2" required>
+                            <input type="radio" id="years0-2" name="yearsTeaching" value="0-2" required aria-required="true">
                             <label for="years0-2">0-2</label>
                         </div>
                         <div class="radio-item">
@@ -287,7 +302,7 @@
                     <label>Primary role <span class="required">*</span></label>
                     <div class="radio-group">
                         <div class="radio-item">
-                            <input type="radio" id="roleClassroom" name="primaryRole" value="classroom" required>
+                            <input type="radio" id="roleClassroom" name="primaryRole" value="classroom" required aria-required="true">
                             <label for="roleClassroom">Classroom teacher</label>
                         </div>
                         <div class="radio-item">
@@ -343,7 +358,7 @@
                     <label>Your basketball background <span class="required">*</span></label>
                     <div class="radio-group">
                         <div class="radio-item">
-                            <input type="radio" id="bbBeginner" name="basketballBackground" value="beginner" required>
+                            <input type="radio" id="bbBeginner" name="basketballBackground" value="beginner" required aria-required="true">
                             <label for="bbBeginner">Never played - complete beginner</label>
                         </div>
                         <div class="radio-item">
@@ -360,28 +375,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label>If you had to teach basic basketball skills tomorrow, how confident would you feel? <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="confVery" name="teachingConfidence" value="very" required>
-                            <label for="confVery">Very confident - I could handle it</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="confSomewhat" name="teachingConfidence" value="somewhat">
-                            <label for="confSomewhat">Somewhat confident - with some preparation</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="confNot" name="teachingConfidence" value="not">
-                            <label for="confNot">Not very confident - would need significant help</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="confNotAtAll" name="teachingConfidence" value="notAtAll">
-                            <label for="confNotAtAll">Not confident at all - would struggle</label>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Section 3: School Context -->
@@ -395,7 +388,7 @@
                     <label>Current basketball at your school <span class="required">*</span></label>
                     <div class="radio-group">
                         <div class="radio-item">
-                            <input type="radio" id="bbActive" name="currentBasketball" value="active" required>
+                            <input type="radio" id="bbActive" name="currentBasketball" value="active" required aria-required="true">
                             <label for="bbActive">Active basketball program (teams/training)</label>
                         </div>
                         <div class="radio-item">
@@ -426,11 +419,7 @@
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="facilityMulti" name="facilities" value="multi">
-                            <label for="facilityMulti">Multi-purpose court</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="facilityHall" name="facilities" value="hall">
-                            <label for="facilityHall">Large hall/gym</label>
+                            <label for="facilityMulti">Multi-purpose court or hall</label>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="facilityOutdoor" name="facilities" value="outdoor">
@@ -438,7 +427,7 @@
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="facilityLimited" name="facilities" value="limited">
-                            <label for="facilityLimited">Limited space only</label>
+                            <label for="facilityLimited">Limited to no space</label>
                         </div>
                     </div>
                 </div>
@@ -485,7 +474,7 @@
                     <label>Primary reason for joining this program <span class="required">*</span></label>
                     <div class="radio-group">
                         <div class="radio-item">
-                            <input type="radio" id="reasonStudents" name="primaryReason" value="students" required>
+                            <input type="radio" id="reasonStudents" name="primaryReason" value="students" required aria-required="true">
                             <label for="reasonStudents">Students have requested basketball activities</label>
                         </div>
                         <div class="radio-item">
@@ -506,66 +495,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label>How you'd likely use these skills</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useTeam" name="skillUse" value="team">
-                            <label for="useTeam">Start/coach official school team</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="usePE" name="skillUse" value="pe">
-                            <label for="usePE">Add to PE lessons</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useActivities" name="skillUse" value="activities">
-                            <label for="useActivities">Run lunch/after-school activities</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useCompetitions" name="skillUse" value="competitions">
-                            <label for="useCompetitions">Organize school competitions</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="useSupport" name="skillUse" value="support">
-                            <label for="useSupport">Support existing sports programs</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>What student outcomes matter most to you (Select top 3)</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeConfidence" name="outcomes" value="confidence">
-                            <label for="outcomeConfidence">Building confidence & self-esteem</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeTeamwork" name="outcomes" value="teamwork">
-                            <label for="outcomeTeamwork">Teamwork & collaboration</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeFitness" name="outcomes" value="fitness">
-                            <label for="outcomeFitness">Physical fitness & health</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeEngaging" name="outcomes" value="engaging">
-                            <label for="outcomeEngaging">Engaging reluctant students</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeLeadership" name="outcomes" value="leadership">
-                            <label for="outcomeLeadership">Leadership development</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeSpirit" name="outcomes" value="spirit">
-                            <label for="outcomeSpirit">School spirit & community</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="outcomeSocial" name="outcomes" value="social">
-                            <label for="outcomeSocial">Social skills development</label>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Section 5: Practical Considerations -->
@@ -574,179 +503,27 @@
                     <div class="section-title">⚙️ Practical Considerations</div>
                     <div class="section-subtitle">Making sure the program works for you</div>
                 </div>
-
                 <div class="form-group">
-                    <label>Can you commit to all training sessions? <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="commitYes" name="commitment" value="yes" required>
-                            <label for="commitYes">Yes, definitely</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="commitMaybe" name="commitment" value="maybe">
-                            <label for="commitMaybe">Yes, but might miss one session</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="commitProbably" name="commitment" value="probably">
-                            <label for="commitProbably">Probably, but school schedule could conflict</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="commitUncertain" name="commitment" value="uncertain">
-                            <label for="commitUncertain">Uncertain due to commitments</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Realistic timeline for implementing basketball activities <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="timelineImmediate" name="timeline" value="immediate" required>
-                            <label for="timelineImmediate">Immediately after training</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timelineNextTerm" name="timeline" value="nextTerm">
-                            <label for="timelineNextTerm">Next school term</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timelineNextYear" name="timeline" value="nextYear">
-                            <label for="timelineNextYear">Next academic year</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timelineOpportunity" name="timeline" value="opportunity">
-                            <label for="timelineOpportunity">When opportunity arises</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timelineDepends" name="timeline" value="depends">
-                            <label for="timelineDepends">Depends on school approval/resources</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Any physical limitations or accessibility needs we should know about?</label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="limitationsNone" name="limitations" value="none">
-                            <label for="limitationsNone">None</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="limitationsMinor" name="limitations" value="minor">
-                            <label for="limitationsMinor">Minor limitations</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="limitationsSignificant" name="limitations" value="significant">
-                            <label for="limitationsSignificant">Significant limitations</label>
-                        </div>
-                    </div>
-                    <input type="text" name="limitationsDetails" placeholder="Please specify if applicable" style="margin-top: 10px;">
-                </div>
-
-                <div class="form-group">
-                    <label>Preferred learning style (Select top 2)</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnHands" name="learningStyle" value="hands">
-                            <label for="learnHands">Hands-on practice</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnGuides" name="learningStyle" value="guides">
-                            <label for="learnGuides">Step-by-step guides/templates</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnVideo" name="learningStyle" value="video">
-                            <label for="learnVideo">Video demonstrations</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnDiscussion" name="learningStyle" value="discussion">
-                            <label for="learnDiscussion">Group discussion</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="learnMaterials" name="learningStyle" value="materials">
-                            <label for="learnMaterials">Resource materials</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 6: Final Thoughts -->
-            <div class="section" data-section="6">
-                <div class="section-header">
-                    <div class="section-title">💭 Final Thoughts</div>
-                    <div class="section-subtitle">Optional but helpful</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="challenge">Specific coaching challenge you hope we'll address</label>
-                    <textarea id="challenge" name="challenge" placeholder="e.g., 'Managing large groups with limited equipment'"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="success">What would success look like for you after this program</label>
-                    <textarea id="success" name="success" placeholder="Describe your ideal outcome..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>How did you hear about this program <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="hearAdmin" name="hearAbout" value="admin" required>
-                            <label for="hearAdmin">School admin</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="hearColleague" name="hearAbout" value="colleague">
-                            <label for="hearColleague">Colleague</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="hearDept" name="hearAbout" value="dept">
-                            <label for="hearDept">Education dept</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="hearSocial" name="hearAbout" value="social">
-                            <label for="hearSocial">Social media</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="hearOther" name="hearAbout" value="other">
-                            <label for="hearOther">Other</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group triple">
-                    <div>
-                        <label for="emergencyName">Emergency contact name <span class="required">*</span></label>
-                        <input type="text" id="emergencyName" name="emergencyName" required>
-                    </div>
-                    <div>
-                        <label for="emergencyRelation">Relationship <span class="required">*</span></label>
-                        <input type="text" id="emergencyRelation" name="emergencyRelation" required>
-                    </div>
-                    <div>
-                        <label for="emergencyPhone">Phone <span class="required">*</span></label>
-                        <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="additional">Anything else that would help us support your learning</label>
+                    <label for="additional">Anything you would like to comment?</label>
                     <textarea id="additional" name="additional" placeholder="Any additional information you'd like to share..."></textarea>
                 </div>
             </div>
 
             <div class="submit-section">
-                <button type="submit" class="submit-btn" id="submitBtn">Submit Survey</button>
-                <p style="margin-top: 20px; color: #7f8c8d; font-size: 14px;">
-                    We'll review your responses and contact you within one week with program details.
-                </p>
+                <button type="submit" class="submit-btn" id="submitBtn" aria-label="Submit Survey">Submit Survey</button>
             </div>
         </form>
     </div>
     <script>
         // --- Google Sheets Integration ---
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw.../exec'; // e.g. https://script.google.com/macros/s/...
+        // Replace with your actual Google Apps Script endpoint
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw.../exec';
+
         const sections = document.querySelectorAll('.section');
         const progressFill = document.getElementById('progressFill');
         const form = document.getElementById('basketballSurvey');
+        const submitBtn = document.getElementById('submitBtn');
+
         function updateProgress() {
             const totalSections = sections.length;
             let completedSections = 0;
@@ -765,11 +542,14 @@
             const progress = (completedSections / totalSections) * 100;
             progressFill.style.width = progress + '%';
         }
+
         form.addEventListener('input', updateProgress);
         form.addEventListener('change', updateProgress);
+
         function getFormData(form) {
             const data = {};
             const formData = new FormData(form);
+            // Handle checkboxes as arrays
             form.querySelectorAll('input[type="checkbox"]').forEach(input => {
                 if (!data[input.name]) data[input.name] = [];
             });
@@ -784,6 +564,7 @@
                     data[key] = value;
                 }
             }
+            // Remove empty arrays
             Object.keys(data).forEach(key => {
                 if (Array.isArray(data[key]) && data[key].length === 0) {
                     delete data[key];
@@ -791,9 +572,57 @@
             });
             return data;
         }
+
+        // Limit "challenges" to max 2 selections
+        form.addEventListener('change', function(e) {
+            if (e.target.name === 'challenges') {
+                const checked = form.querySelectorAll('input[name="challenges"]:checked');
+                if (checked.length > 2) {
+                    e.target.checked = false;
+                    alert('Please select no more than 2 challenges.');
+                }
+            }
+        });
+
+        // Client-side validation for required fields
+        function validateForm() {
+            let valid = true;
+            // Remove previous error highlights
+            form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+            // Validate required text/email/tel/textarea
+            form.querySelectorAll('input[required], textarea[required]').forEach(input => {
+                if (input.type === 'radio') {
+                    const group = form.querySelectorAll(`input[name="${input.name}"]`);
+                    if (![...group].some(r => r.checked)) {
+                        group.forEach(r => r.parentElement.classList.add('error'));
+                        valid = false;
+                    }
+                } else if (!input.value.trim()) {
+                    input.classList.add('error');
+                    valid = false;
+                }
+            });
+            // Validate email
+            const email = form.querySelector('input[type="email"]');
+            if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                email.classList.add('error');
+                valid = false;
+            }
+            // Validate phone
+            const phone = form.querySelector('input[type="tel"]');
+            if (phone && phone.value && !/^[0-9+\s()-]{7,}$/.test(phone.value)) {
+                phone.classList.add('error');
+                valid = false;
+            }
+            return valid;
+        }
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const submitBtn = document.getElementById('submitBtn');
+            if (!validateForm()) {
+                alert('Please fill in all required fields correctly.');
+                return;
+            }
             submitBtn.disabled = true;
             submitBtn.textContent = 'Submitting...';
             const data = getFormData(form);
@@ -823,6 +652,8 @@
                 submitBtn.textContent = 'Submit Survey';
             });
         });
+
+        // Auto-save to localStorage
         let autoSaveTimeout;
         form.addEventListener('input', function() {
             clearTimeout(autoSaveTimeout);
@@ -831,6 +662,8 @@
                 localStorage.setItem('basketballSurveyData', JSON.stringify(data));
             }, 2000);
         });
+
+        // Restore from localStorage
         window.addEventListener('load', function() {
             const savedData = localStorage.getItem('basketballSurveyData');
             if (savedData) {
@@ -860,6 +693,9 @@
                 }
             }
         });
+
+        // Initial progress update
+        updateProgress();
     </script>
 </body>
 </html>
