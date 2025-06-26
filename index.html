@@ -1,225 +1,175 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBL Fastbreak Melaka - Pre-Program Survey</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: #ffffff;
-            font-size: 16px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .header h1 {
-            font-size: 28px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .header p {
-            color: #7f8c8d;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 2px;
-            background: #ecf0f1;
-            border-radius: 1px;
-            margin: 30px 0;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: #3498db;
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .section {
-            margin-bottom: 50px;
-        }
-
-        .section-header {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-subtitle {
-            font-size: 14px;
-            color: #7f8c8d;
-            font-style: italic;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group.inline {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 15px;
-        }
-
-        .form-group.triple {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            font-size: 15px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea {
-            width: 100%;
-            padding: 12px 0;
-            border: none;
-            border-bottom: 1px solid #bdc3c7;
-            background: transparent;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="tel"]:focus,
-        textarea:focus {
-            outline: none;
-            border-bottom-color: #3498db;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-            border: 1px solid #bdc3c7;
-            border-radius: 4px;
-            padding: 12px;
-        }
-
-        .checkbox-group,
-        .radio-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .checkbox-group.horizontal,
-        .radio-group.horizontal {
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .checkbox-item,
-        .radio-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            padding: 8px 0;
-        }
-
-        input[type="checkbox"],
-        input[type="radio"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        .checkbox-item label,
-        .radio-item label {
-            margin: 0;
-            cursor: pointer;
-            font-weight: 400;
-        }
-
-        .required {
-            color: #e74c3c;
-        }
-
-        .submit-section {
-            margin-top: 60px;
-            text-align: center;
-        }
-
-        .submit-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #2980b9;
-        }
-
-        .submit-btn:disabled {
-            background: #bdc3c7;
-            cursor: not-allowed;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
-            }
-            
-            .form-group.inline,
-            .form-group.triple {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .checkbox-group.horizontal,
-            .radio-group.horizontal {
-                flex-direction: column;
-                gap: 12px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBL Fastbreak Melaka - Pre-Program Survey</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      background: #ffffff;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .header p {
+      color: #7f8c8d;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 2px;
+      background: #ecf0f1;
+      border-radius: 1px;
+      margin: 30px 0;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #3498db;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    .section-header {
+      margin-bottom: 30px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-subtitle {
+      font-size: 14px;
+      color: #7f8c8d;
+      font-style: italic;
+    }
+    .form-group {
+      margin-bottom: 25px;
+    }
+    .form-group.inline,
+    .form-group.triple {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 12px 0;
+      border: none;
+      border-bottom: 1px solid #bdc3c7;
+      background: transparent;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-bottom-color: #3498db;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+      border: 1px solid #bdc3c7;
+      border-radius: 4px;
+      padding: 12px;
+    }
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .checkbox-group.horizontal,
+    .radio-group.horizontal {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .checkbox-item,
+    .radio-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      padding: 8px 0;
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .checkbox-item label,
+    .radio-item label {
+      margin: 0;
+      cursor: pointer;
+      font-weight: 400;
+    }
+    .submit-section {
+      margin-top: 60px;
+      text-align: center;
+    }
+    .submit-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .submit-btn:hover { background: #2980b9; }
+    .submit-btn:disabled { background: #bdc3c7; cursor: not-allowed; }
+    /* Error highlight for invalid fields */
+    .error, .error input, .error textarea {
+      border-bottom: 2px solid #e74c3c !important;
+      background: #fff6f6;
+    }
+    @media (max-width: 768px) {
+      .container { padding: 20px 15px; }
+      .form-group.inline,
+      .form-group.triple { grid-template-columns: 1fr; gap: 20px; }
+      .checkbox-group.horizontal,
+      .radio-group.horizontal {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
     <div class="container" aria-label="CBL Fastbreak Melaka Pre-Program Survey">
@@ -457,48 +407,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Section 4: Goals & Motivation -->
-            <div class="section" data-section="4">
-                <div class="section-header">
-                    <div class="section-title">🎯 Your Goals & Motivation</div>
-                    <div class="section-subtitle">What you hope to achieve</div>
-                </div>
-
-                <div class="form-group">
-                    <label>Primary reason for joining this program <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="reasonStudents" name="primaryReason" value="students" required aria-required="true">
-                            <label for="reasonStudents">Students have requested basketball activities</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="reasonSkills" name="primaryReason" value="skills">
-                            <label for="reasonSkills">Want to expand my skills and teaching toolkit</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="reasonSchool" name="primaryReason" value="school">
-                            <label for="reasonSchool">School priority/administration request</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="reasonPersonal" name="primaryReason" value="personal">
-                            <label for="reasonPersonal">Personal interest in basketball/coaching</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="reasonEngage" name="primaryReason" value="engage">
-                            <label for="reasonEngage">Looking for new ways to engage students</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 5: Practical Considerations -->
-            <div class="section" data-section="5">
-                <div class="section-header">
-                    <div class="section-title">⚙️ Practical Considerations</div>
-                    <div class="section-subtitle">Making sure the program works for you</div>
-                </div>
                 <div class="form-group">
                     <label for="additional">Anything you would like to comment?</label>
                     <textarea id="additional" name="additional" placeholder="Any additional information you'd like to share..."></textarea>
@@ -513,7 +421,7 @@
     <script>
         // --- Google Sheets Integration ---
         // Replace with your actual Google Apps Script endpoint
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw.../exec';
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzg9MlHm-QCltew29Um5iEe0r9MXOkIvwHf_C2VinUa1quG1bwI-u7pdKAXJSEhSrSh/exec';
 
         const sections = document.querySelectorAll('.section');
         const progressFill = document.getElementById('progressFill');
